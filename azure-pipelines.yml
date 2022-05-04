@@ -25,7 +25,7 @@ steps:
     workingDirectory: 'C:\Projects\CITest'
 
   # build debug
-- task: Gradle@4
+- task: Gradle@2
   inputs:
     workingDirectory: 'C:\Projects\CITest\android'
     gradleWrapperFile: 'C:\Projects\CITest\android\gradlew'

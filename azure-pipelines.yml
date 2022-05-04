@@ -10,6 +10,23 @@ pool: Default
   #vmImage: 'macos-latest'
 
 steps:
+  # PowerShell
+  # Run a PowerShell script on Linux, macOS, or Windows
+  - task: PowerShell@2
+    inputs:
+    targetType: 'inline' # Optional. Options: filePath, inline
+    #filePath: # Required when targetType == FilePath
+    #arguments: # Optional
+    script: 'ionic capacitor sync android' # Required when targetType == Inline
+    #errorActionPreference: 'stop' # Optional. Options: default, stop, continue, silentlyContinue
+    #warningPreference: 'default' # Optional. Options: default, stop, continue, silentlyContinue
+    #informationPreference: 'default' # Optional. Options: default, stop, continue, silentlyContinue
+    #verbosePreference: 'default' # Optional. Options: default, stop, continue, silentlyContinue
+    #debugPreference: 'default' # Optional. Options: default, stop, continue, silentlyContinue
+    #failOnStderr: false # Optional
+    #ignoreLASTEXITCODE: false # Optional
+    #pwsh: false # Optional
+    workingDirectory: 'C:\Projects\CITest'
 - task: Gradle@2
   inputs:
     workingDirectory: 'C:\Projects\CITest\android'
@@ -18,15 +35,3 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
-
-  # Bash
-  # Run a Bash script on macOS, Linux, or Windows
-- task: Bash@3
-  inputs:
-    targetType: 'filePath'
-    filePath: 'C:\Projects\CITest\emulator-android.sh'
-    #arguments: # Optional
-    #script: '# echo Hello world' # Required when targetType == inline
-    #workingDirectory: 'C:\Projects\CITest' # Optional
-    #failOnStderr: false # Optional
-    #bashEnvValue: # Optional

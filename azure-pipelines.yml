@@ -15,21 +15,18 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'npm i'
-    #workingDirectory: 'C:\Projects\CITest'
 
   # sync
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: 'ionic capacitor sync android'
-    #workingDirectory: 'C:\Projects\CITest'
 
   # unit test
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'vue-cli-service test:unit'
-    #workingDirectory: 'C:\Projects\CITest'
+    script: 'npm run test:unit'
 
   # build debug
 - task: Gradle@2

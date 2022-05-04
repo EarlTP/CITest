@@ -24,7 +24,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'filePath' # Optional. Options: filePath, inline
-    filePath: 'emulator-android.sh'
+    filePath: 'C:\Projects\CITest\emulator-android.sh'
     #arguments: # Optional
     #script: '# echo Hello world' # Required when targetType == inline
     workingDirectory: 'C:\Projects\CITest' # Optional

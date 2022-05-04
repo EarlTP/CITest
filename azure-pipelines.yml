@@ -10,10 +10,9 @@ pool: Default
   #vmImage: 'macos-latest'
 
 steps:
-  # PowerShell
-  # Run a PowerShell script on Linux, macOS, or Windows
-  - task: PowerShell@2
-    inputs:
+  # sync
+- task: PowerShell@2
+  inputs:
     targetType: 'inline' # Optional. Options: filePath, inline
     #filePath: # Required when targetType == FilePath
     #arguments: # Optional
@@ -27,7 +26,8 @@ steps:
     #ignoreLASTEXITCODE: false # Optional
     #pwsh: false # Optional
     workingDirectory: 'C:\Projects\CITest'
-- task: Gradle@2
+
+- task: Gradle@3
   inputs:
     workingDirectory: 'C:\Projects\CITest\android'
     gradleWrapperFile: 'C:\Projects\CITest\android\gradlew'

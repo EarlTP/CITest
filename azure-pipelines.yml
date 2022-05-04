@@ -12,7 +12,7 @@ pool: Default
 steps:
 - task: Gradle@2
   inputs:
-    workingDirectory: 'C:\Projects\CITest\android'
+    workingDirectory: 'android'
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
     publishJUnitResults: false

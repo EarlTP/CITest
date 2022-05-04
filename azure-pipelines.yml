@@ -11,24 +11,21 @@ pool: Default
 
 steps:
   # sync
-- task: PowerShell@2
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
     script: 'npm i'
 
   # sync
-- task: PowerShell@2
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
     script: 'ionic capacitor sync android'
 
   # unit test
-- task: PowerShell@2
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
     script: 'npm run test:unit'
 
-  # build debug
+  # android build debug
 - task: Gradle@2
   inputs:
     workingDirectory: 'android'

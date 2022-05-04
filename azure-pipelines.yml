@@ -23,10 +23,10 @@ steps:
   # Run a Bash script on macOS, Linux, or Windows
 - task: Bash@3
   inputs:
-  targetType: 'filePath' # Optional. Options: filePath, inline
-  filePath: 'emulator-android.sh'
-  #arguments: # Optional
-  #script: '# echo Hello world' # Required when targetType == inline
-  workingDirectory: 'C:\Projects\CITest'
-  #failOnStderr: false # Optional
-  #bashEnvValue: # Optional
+    targetType: 'filePath' # Optional. Options: filePath, inline
+    filePath: 'emulator-android.sh'
+    #arguments: # Optional
+    #script: '# echo Hello world' # Required when targetType == inline
+    workingDirectory: 'C:\Projects\CITest'
+    #failOnStderr: false # Optional
+    #bashEnvValue: # Optional

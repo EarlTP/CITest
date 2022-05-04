@@ -10,7 +10,7 @@ pool: Default
   #vmImage: 'macos-latest'
 
 steps:
-  # sync
+  # aggiornamento librerie
 - task: CmdLine@2
   inputs:
     script: 'npm i'

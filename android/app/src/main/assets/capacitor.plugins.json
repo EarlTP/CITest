@@ -1,5 +1,17 @@
 [
 	{
+		"pkg": "@capacitor-community/appcenter",
+		"classpath": "com.getcapacitor.plugin.appcenter.AppCenterPlugin"
+	},
+	{
+		"pkg": "@capacitor-community/appcenter-analytics",
+		"classpath": "com.getcapacitor.plugin.appcenter.analytics.AnalyticsPlugin"
+	},
+	{
+		"pkg": "@capacitor-community/appcenter-crashes",
+		"classpath": "com.getcapacitor.plugin.appcenter.crashes.CrashesPlugin"
+	},
+	{
 		"pkg": "@capacitor/app",
 		"classpath": "com.capacitorjs.plugins.app.AppPlugin"
 	},

@@ -13,15 +13,15 @@ steps:
   # sync
 - task: PowerShell@2
   inputs:
-    targetType: 'inline' # Optional. Options: filePath, inline
-    script: 'ionic capacitor sync android' # Required when targetType == Inline
+    targetType: 'inline'
+    script: 'ionic capacitor sync android'
     workingDirectory: 'C:\Projects\CITest'
 
   # unit test
 - task: PowerShell@3
   inputs:
-    targetType: 'inline' # Optional. Options: filePath, inline
-    script: 'vue-cli-service test:unit' # Required when targetType == Inline
+    targetType: 'inline'
+    script: 'vue-cli-service test:unit'
     workingDirectory: 'C:\Projects\CITest'
 
   # build debug

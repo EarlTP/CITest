@@ -4,12 +4,11 @@
 echo ">> mi sposto nella root del progetto <<"
 cd ..
 cd ..
-ls
 
 # aggiornamento librerie
 echo ">> aggiornamento librerie <<"
 npm i
-ls
+npm install @ionic/cli@6.16.3
 
 # sync
 echo ">> sync <<"
@@ -18,4 +17,3 @@ ionic capacitor sync android
 # android
 echo ">> mi sposto in android <<"
 cd android/app
-ls

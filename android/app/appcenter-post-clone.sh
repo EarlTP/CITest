@@ -7,12 +7,16 @@ cd ..
 
 # aggiornamento librerie
 echo ">> aggiornamento librerie <<"
-npm i
-npm i @ionic/cli
+npm install -g @ionic/cli
+npm install
+
+ionic -v
 
 # sync
 echo ">> sync <<"
-ionic capacitor sync android
+ionic cap build android --no-open
+npx cap sync
+#ionic capacitor sync android
 
 # android
 echo ">> mi sposto in android <<"

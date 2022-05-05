@@ -6,32 +6,32 @@
 trigger:
 - master
 
-pool: Default
-  #vmImage: 'macos-latest'
+variables:
+  vmImageName: 'Default'
+  projectName: 'CITest'
 
-steps:
-  # aggiornamento librerie
-- task: CmdLine@2
-  inputs:
-    script: 'npm i'
+stages:
+  - stage: Build
+    displayName: Build Ionic - Android projects
+    jobs:
+      # Debug build
+      - job: Build_Ionic_Android_Debug
+        variables:
+          - name: buildConfiguration
+            value: Debug
+        displayName: Build Debug
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - template: ionic-android-debug-build.yml
 
-  # sync
-- task: CmdLine@2
-  inputs:
-    script: 'ionic capacitor sync android'
-
-  # unit test
-- task: CmdLine@2
-  inputs:
-    script: 'npm run test:unit'
-
-  # android build debug
-- task: Gradle@2
-  inputs:
-    workingDirectory: 'android'
-    gradleWrapperFile: 'android/gradlew'
-    gradleOptions: '-Xmx3072m'
-    publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'assembleDebug'
-
+      # Release build
+      #- job: Build_Ionic_Android_Release
+      #  variables:
+      #    - name: buildConfiguration
+      #      value: Release
+      #  displayName: Build Release
+      #  pool:
+      #    vmImage: $(vmImageName)
+      #  steps:
+      #    - template: ionic-android-release-build.yml

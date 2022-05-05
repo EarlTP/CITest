@@ -20,8 +20,8 @@ stages:
           - name: buildConfiguration
             value: Debug
         displayName: Build Debug
-        pool:
-          vmImage: $(vmImageName)
+        pool: Default
+          #vmImage: $(vmImageName)
         steps:
           - template: ionic-android-debug-build.yml
 
@@ -31,7 +31,7 @@ stages:
       #    - name: buildConfiguration
       #      value: Release
       #  displayName: Build Release
-      #  pool:
-      #    vmImage: $(vmImageName)
+      #  pool: Default
+      #    #vmImage: $(vmImageName)
       #  steps:
       #    - template: ionic-android-release-build.yml

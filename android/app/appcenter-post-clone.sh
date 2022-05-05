@@ -8,7 +8,7 @@ cd ..
 # aggiornamento librerie
 echo ">> aggiornamento librerie <<"
 npm i
-npm install @ionic/cli@6.16.3
+npm i @ionic/cli
 
 # sync
 echo ">> sync <<"

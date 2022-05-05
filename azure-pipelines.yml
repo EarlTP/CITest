@@ -7,7 +7,7 @@ trigger:
 - master
 
 variables:
-  vmImageName: 'Default'
+  vmImageName: Default
   projectName: 'CITest'
 
 stages:
